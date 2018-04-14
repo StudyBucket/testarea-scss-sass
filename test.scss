@@ -1,0 +1,71 @@
+$red : #e74c3c;
+$orange : #e67e22;
+$blue: #3498db;
+$yellow: #f1c40f;
+
+$textSize: 24px;
+$fontFamily: Helvetica, sans-serif;
+$stringA: ">> ";
+$stringB: " <<";
+
+$colors: (
+1: red,
+2: orange,
+3: yellow,
+4: violet,
+5: blue,
+6: purple
+);
+
+
+//@for $i from 1 to 6 {
+//  h#{$i}{
+//    color: map-get($colors, $i);
+//  }
+//}
+
+ 
+@each $x, $color in $colors {
+  h#{$x}{
+    color: #{$color};
+  }
+}
+
+h1:before { content: "#{$stringA}"; }
+h1:after { content: "#{$stringB}"; }
+
+@mixin center(){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+@keyframes colorChange {
+  25% { color: red; }
+  50% { color: blue; }
+  75% { color: green; }
+  100% { color: black; }
+}
+
+.container {
+  @include center;
+  h1 {
+    color: black;
+    animation: colorChange 4s infinite linear;
+  }
+  h1:before, h1:after {
+    content: none;
+  }
+  p {
+    font: {
+      weight: 500;
+      size: 12.5px;
+      family: Roboto, sans-serif;
+    }
+  }
+}
+
+
