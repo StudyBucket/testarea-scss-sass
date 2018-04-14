@@ -1,10 +1,9 @@
  @font-face {
     font-family: Kuro-Regular;
-    src: url("Kuro-Regular.otf") format("opentype");
+    src: url("../assets/Kuro-Regular.otf") format("opentype");
 }
 
 $textSize: 24px;
 $fontFamily: Kuro-Regular, Helvetica, sans-serif;
 $stringA: ">> ";
 $stringB: " <<";
- 

@@ -37,6 +37,20 @@ h1:after { content: "#{$stringB}"; }
       weight: 500;
       size: 12.5px;
       family: Roboto, sans-serif;
+      line-height: 16px;
+    }
+    @media screen and (max-width: 768px){
+      font-size: 0.1rem;
     }
   }
+}
+
+@function add($x, $y){
+  @return $x + $y;
+}
+
+$n : add(5,5);
+
+p::after {
+  content: "#{$n}";
 }
