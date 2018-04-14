@@ -1,22 +1,3 @@
-$red : #e74c3c;
-$orange : #e67e22;
-$blue: #3498db;
-$yellow: #f1c40f;
-
-$textSize: 24px;
-$fontFamily: Helvetica, sans-serif;
-$stringA: ">> ";
-$stringB: " <<";
-
-$colors: (
-1: red,
-2: orange,
-3: yellow,
-4: violet,
-5: blue,
-6: purple
-);
-
 
 //@for $i from 1 to 6 {
 //  h#{$i}{
@@ -24,24 +5,16 @@ $colors: (
 //  }
 //}
 
- 
+
 @each $x, $color in $colors {
   h#{$x}{
     color: #{$color};
+    font-family: $fontFamily;
   }
 }
 
 h1:before { content: "#{$stringA}"; }
 h1:after { content: "#{$stringB}"; }
-
-@mixin center(){
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-}
 
 @keyframes colorChange {
   25% { color: red; }
@@ -67,5 +40,3 @@ h1:after { content: "#{$stringB}"; }
     }
   }
 }
-
-
