@@ -52,5 +52,5 @@ h1:after { content: "#{$stringB}"; }
 $n : add(5,5);
 
 p::after {
-  content: "#{$n}";
+  content: " #{$n}";
 }
